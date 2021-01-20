@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2> Contatto </h2>
+
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Cognome</td>
+            <td>Email</td>
+            <td>Sito web</td>
+            <td>Telefono</td>
+            <td>Note</td>
+            <td>createdAt</td>
+            <td>Azioni</td>
+        </tr>
+        <tr>
+            <td>${contact.firstName}</td>
+            <td>${contact.lastName}</td>
+            <td>${contact.email}</td>
+            <td>${contact.website}</td>
+            <td>${contact.phone}</td>
+            <td>${contact.notes}</td>
+            <td>${contact.createdAt}</td>
+            <td><button onclick="deleteContact()">Elimina</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function deleteContact() {
+            fetch('http://127.0.0.1:8001/deletecontatto/0');
+        }
+    </script>
+
+    <style>
+        table {
+            border: 1px solid black;
+        }
+
+        td {
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
